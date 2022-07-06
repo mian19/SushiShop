@@ -15,7 +15,9 @@ class MenuTabBarController: UITabBarController {
         let nav1 = generateNavController(vc: UIViewController(), imageName: "bag")
         let nav2 = generateNavController(vc: UIViewController(), imageName: "info")
         
-        UITabBar.appearance().tintColor = UIColor.init(rgb: 0xFFFFFF)
+        UITabBar.appearance().unselectedItemTintColor = UIColor.init(rgb: 0xFFFFFF)
+        UITabBar.appearance().tintColor = UIColor.init(rgb: 0xc7ad43)
+        UITabBar.appearance().backgroundColor = UIColor.init(rgb: 0x000000)
         viewControllers = [nav, nav1, nav2]
         
     }
