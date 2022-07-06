@@ -21,6 +21,7 @@
 		679A06052875D1D000E716BD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A06042875D1D000E716BD /* NetworkManager.swift */; };
 		679A0608287612D600E716BD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A0606287612D600E716BD /* CategoryCollectionViewCell.swift */; };
 		679A0609287612D600E716BD /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 679A0607287612D600E716BD /* CategoryCollectionViewCell.xib */; };
+		679A060B287640EE00E716BD /* UILabel+CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A060A287640EE00E716BD /* UILabel+CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		679A06042875D1D000E716BD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		679A0606287612D600E716BD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		679A0607287612D600E716BD /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		679A060A287640EE00E716BD /* UILabel+CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+CustomLabel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				679A05F72875905900E716BD /* UIColor+hex.swift */,
 				679A05F9287598E200E716BD /* UIButton+CustomButton.swift */,
+				679A060A287640EE00E716BD /* UILabel+CustomLabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				679A06052875D1D000E716BD /* NetworkManager.swift in Sources */,
+				679A060B287640EE00E716BD /* UILabel+CustomLabel.swift in Sources */,
 				679A05FA287598E200E716BD /* UIButton+CustomButton.swift in Sources */,
 				679A05FE2875CD4B00E716BD /* CategoryCollectionView.swift in Sources */,
 				679A05E728758B7000E716BD /* ViewController.swift in Sources */,

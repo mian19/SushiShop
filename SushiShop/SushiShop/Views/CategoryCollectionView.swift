@@ -10,6 +10,9 @@ import UIKit
 class CategoryCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var cells: [MenuList]?
+    var selectedCategoryName: String = "Сеты"
+    var selectedIndex: IndexPath = [0, 0]
+    var myDeleg: ViewController!
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -36,6 +39,12 @@ class CategoryCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         let cell = dequeueReusableCell(withReuseIdentifier: "sushiCell", for: indexPath) as! CategoryCollectionViewCell
         cell.updateUI(categoryItem: cells?[indexPath.row])
         
+        if selectedIndex == indexPath {
+            cell.backgroundColor = UIColor.init(rgb: 0x385ff9)
+        } else {
+            cell.backgroundColor = UIColor.init(rgb: 0x373839)
+        }
+        
         return cell
     }
     
@@ -43,6 +52,17 @@ class CategoryCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
 
         return CGSize(width: 140, height: 160)
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        let oldSelectedCell = collectionView.cellForItem(at: selectedIndex)
+        oldSelectedCell?.backgroundColor = UIColor.init(rgb: 0x373839)
+        selectedIndex = indexPath
+        
+        let selectedCell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell
+        myDeleg.sushiLabel.text = selectedCell?.categoryNameLabel.text
+           selectedCell?.backgroundColor = UIColor.init(rgb: 0x385ff9)
     }
 
     required init?(coder: NSCoder) {

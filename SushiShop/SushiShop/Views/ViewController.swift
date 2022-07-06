@@ -7,14 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate {
 
     private var logoImageView: UIImageView!
     private var phoneButton: UIButton!
     private var categoryCollectionView: CategoryCollectionView!
-    private var sushiLabel: UILabel!
     private var subCategoryCollectionView: UICollectionView!
     private var menuSushiList = [MenuList]()
+    var sushiLabel: UILabel!
     
     override func loadView() {
         let customView = UIView(frame: UIScreen.main.bounds)
@@ -24,12 +24,14 @@ class ViewController: UIViewController {
         setLogoImageView()
         setPhoneButton()
         setCategoryCollection()
+        setSushiLabel()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setElements()
         fetchMenuList()
+        categoryCollectionView.myDeleg = self
         
     }
     
@@ -54,7 +56,11 @@ class ViewController: UIViewController {
         view.addSubview(categoryCollectionView)
     }
     
-   
+    private func setSushiLabel() {
+        sushiLabel = UILabel.infoLabel(text: categoryCollectionView.selectedCategoryName)
+        view.addSubview(sushiLabel)
+    }
+    
     private func setElements() {
         NSLayoutConstraint.activate([
         
@@ -69,7 +75,10 @@ class ViewController: UIViewController {
             categoryCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             categoryCollectionView.heightAnchor.constraint(equalToConstant: 160),
             categoryCollectionView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
-            categoryCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            view.trailingAnchor.constraint(equalTo: categoryCollectionView.trailingAnchor, constant: 10),
+            sushiLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            sushiLabel.topAnchor.constraint(equalTo: categoryCollectionView.bottomAnchor, constant: 20),
+            view.trailingAnchor.constraint(equalTo: sushiLabel.trailingAnchor, constant: 10),
           
         ])
     }
