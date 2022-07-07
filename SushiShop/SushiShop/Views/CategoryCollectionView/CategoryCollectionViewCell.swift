@@ -8,8 +8,8 @@
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var categoryImageView: UIImageView!    
+    
+    @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryPositionsLabel: UILabel!
     private var fullImageURLString: String = ""
@@ -47,7 +47,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
             }
         }
     }
- 
+    
     
     func correctWord(_ numb: Int) -> String {
         var returnText = ""
@@ -62,5 +62,5 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         
         return returnText
     }
-
+    
 }

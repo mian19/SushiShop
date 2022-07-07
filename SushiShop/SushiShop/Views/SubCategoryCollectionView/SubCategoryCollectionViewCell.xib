@@ -45,7 +45,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WuZ-ME-TrZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="WuZ-ME-TrZ">
                                 <rect key="frame" x="119" y="107.5" width="51" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="lc2-hm-Na2"/>
@@ -79,7 +79,7 @@
                             <constraint firstItem="Mlp-h6-zCh" firstAttribute="leading" secondItem="wNG-da-lZa" secondAttribute="leading" constant="5" id="vru-N0-tib"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="63x-Ko-kCX">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImageAvailable" translatesAutoresizingMaskIntoConstraints="NO" id="63x-Ko-kCX">
                         <rect key="frame" x="0.0" y="137.5" width="210" height="142.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
@@ -127,4 +127,7 @@
             <point key="canvasLocation" x="-273.91304347826087" y="94.419642857142847"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="noImageAvailable" width="209" height="113"/>
+    </resources>
 </document>

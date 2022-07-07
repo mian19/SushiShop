@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate {
-
+    
     private var logoImageView: UIImageView!
     private var phoneButton: UIButton!
     private var categoryCollectionView: CategoryCollectionView!
@@ -70,7 +70,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     private func setElements() {
         NSLayoutConstraint.activate([
-        
+            
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             logoImageView.widthAnchor.constraint(equalToConstant: 160),
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             view.trailingAnchor.constraint(equalTo: subCategoryCollectionView.trailingAnchor, constant: 10),
             subCategoryCollectionView.topAnchor.constraint(equalTo: sushiLabel.bottomAnchor, constant: 10),
             subCategoryCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-          
+            
         ])
     }
     
@@ -105,25 +105,26 @@ class ViewController: UIViewController, UICollectionViewDelegate {
                 self?.categoryCollectionView.reloadData()
                 self?.sushiLabel.text = self?.menuSushiList[0].name
                 self?.fetchSubMenu(menuID: (self?.menuSushiList[0].menuID)!)
-
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
     
-    private func fetchSubMenu(menuID: String) {
+    func fetchSubMenu(menuID: String) {
         NetworkManager().getSubCategorySushi(forBody: menuID) { [weak self] (result) in
             switch result {
             case .success(let subMenu):
                 self?.subMenuSushiList = subMenu.menuList
                 self?.subCategoryCollectionView.setItems(cells: self?.subMenuSushiList ?? nil)
                 self?.subCategoryCollectionView.reloadData()
+                self?.subCategoryCollectionView.setContentOffset(CGPoint(x:0 ,y:0), animated: false)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-
+    
 }
 

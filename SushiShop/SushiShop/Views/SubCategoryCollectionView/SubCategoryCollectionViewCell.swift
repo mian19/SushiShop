@@ -8,7 +8,7 @@
 import UIKit
 
 class SubCategoryCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var textView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
@@ -37,17 +37,20 @@ class SubCategoryCollectionViewCell: UICollectionViewCell {
     func updateUI(subCategoryItem: MenuList?) {
         nameLabel.text = subCategoryItem?.name ?? "Name"
         contentLabel.text = subCategoryItem?.content ?? "content"
-        priceLabel.text = "\(subCategoryItem?.price?.dropLast(3) ?? "0") ₽"
-        weightLabel.text = " / \(subCategoryItem?.weight ?? "0 г")."
+        priceLabel.text = "\(subCategoryItem?.price?.dropLast(3) ?? "-") ₽"
+        weightLabel.text = " / \(subCategoryItem?.weight ?? "- г")."
         guard let imageURLString = subCategoryItem?.image else { return }
         fullImageURLString = "https://vkus-sovet.ru" + imageURLString
         guard let imageURL = URL(string: fullImageURLString) else {
             imageView.image = UIImage(named: "noImageAvailable")
             return }
         
+        spicyImageView.image = nil
         imageView.image = nil
         imageView.contentMode = .scaleToFill
-        
+        if (subCategoryItem?.spicy != nil) {
+            spicyImageView.image = UIImage(named: "hot")
+        }
         setImageForSubCategorySushi(url: imageURL)
     }
     
@@ -62,5 +65,5 @@ class SubCategoryCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-
+    
 }

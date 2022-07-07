@@ -41,11 +41,11 @@ class NetworkManager {
         let url = URL(string: "https://vkus-sovet.ru/api/getSubMenu.php")!
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-
+        
         components.queryItems = [
             URLQueryItem(name: "menuID", value: forBody)
         ]
-
+        
         let query = components.url!.query
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
@@ -58,7 +58,6 @@ class NetworkManager {
                 return
             }
             guard let data = data else { return }
-            print (data)
             do {
                 let jsonAnswer = try JSONDecoder().decode(Sushi.self, from: data)
                 DispatchQueue.main.async {
@@ -88,9 +87,9 @@ class NetworkManager {
                     completion(.success(image))
                 }
             }
-
+            
         }.resume()
     }
     
-
+    
 }

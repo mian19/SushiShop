@@ -8,7 +8,7 @@
 import UIKit
 
 class CategoryCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     var cells: [MenuList]?
     var selectedCategoryName: String?
     var selectedIndex: IndexPath = [0, 0]
@@ -34,7 +34,7 @@ class CategoryCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cells?.count ?? 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: "sushiCell", for: indexPath) as! CategoryCollectionViewCell
         cell.updateUI(categoryItem: cells?[indexPath.row])
@@ -49,9 +49,9 @@ class CategoryCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         return CGSize(width: 140, height: 160)
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -62,9 +62,10 @@ class CategoryCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
         
         let selectedCell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell
         myDeleg.sushiLabel.text = selectedCell?.categoryNameLabel.text
-           selectedCell?.backgroundColor = UIColor.init(rgb: 0x385ff9)
+        myDeleg.fetchSubMenu(menuID: cells?[selectedIndex.row].menuID ?? "5")
+        selectedCell?.backgroundColor = UIColor.init(rgb: 0x385ff9)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
