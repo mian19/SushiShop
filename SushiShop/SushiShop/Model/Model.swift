@@ -8,7 +8,7 @@
 import Foundation
 
 struct Sushi: Codable {
-    let status: Bool?
+    let status: Bool
     let menuList: [MenuList]
 }
 

@@ -10,31 +10,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="SushiShop" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="138" height="163"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="SushiShop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="138" height="162"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="138" height="163"/>
+                <rect key="frame" x="0.0" y="0.0" width="138" height="162"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PZx-Lz-H4o">
-                        <rect key="frame" x="0.0" y="0.0" width="138" height="75"/>
+                        <rect key="frame" x="0.0" y="0.0" width="138" height="80"/>
                         <color key="backgroundColor" red="0.91808676720000004" green="0.92805427309999999" blue="0.94659882780000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="75" id="ZII-eE-vnh"/>
+                            <constraint firstAttribute="height" constant="80" id="sOi-s4-hVm"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MoO-qT-vcd">
-                        <rect key="frame" x="0.0" y="90" width="138" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="lLo-Vo-Oth"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <rect key="frame" x="0.0" y="95" width="138" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CfD-aL-f4V">
-                        <rect key="frame" x="0.0" y="135" width="138" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="0.0" y="131" width="138" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -43,25 +41,23 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.25957179070000003" green="0.26392915839999997" blue="0.26872098449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="CfD-aL-f4V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2mh-cE-Mu4"/>
-                <constraint firstItem="PZx-Lz-H4o" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6IW-Ie-KpV"/>
-                <constraint firstItem="PZx-Lz-H4o" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7Tj-0t-WUT"/>
-                <constraint firstItem="MoO-qT-vcd" firstAttribute="top" secondItem="PZx-Lz-H4o" secondAttribute="bottom" constant="15" id="JK6-6q-jJF"/>
-                <constraint firstItem="MoO-qT-vcd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Lyq-7V-5Yy"/>
-                <constraint firstAttribute="trailing" secondItem="MoO-qT-vcd" secondAttribute="trailing" id="MFE-et-y9H"/>
-                <constraint firstAttribute="trailing" secondItem="PZx-Lz-H4o" secondAttribute="trailing" id="T8e-vG-jBZ"/>
-                <constraint firstItem="MoO-qT-vcd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ejh-WY-tWD"/>
-                <constraint firstAttribute="bottom" secondItem="CfD-aL-f4V" secondAttribute="bottom" constant="10" id="gd1-9r-KwN"/>
-                <constraint firstItem="CfD-aL-f4V" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="rxp-Xk-DyD"/>
-                <constraint firstAttribute="trailing" secondItem="CfD-aL-f4V" secondAttribute="trailing" id="vEZ-vi-Aik"/>
+                <constraint firstAttribute="bottom" secondItem="CfD-aL-f4V" secondAttribute="bottom" constant="15" id="QYy-W4-SFL"/>
+                <constraint firstAttribute="trailing" secondItem="PZx-Lz-H4o" secondAttribute="trailing" id="XKT-CU-Ooz"/>
+                <constraint firstItem="PZx-Lz-H4o" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="azg-29-cZk"/>
+                <constraint firstItem="MoO-qT-vcd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dSR-Sj-KSx"/>
+                <constraint firstItem="CfD-aL-f4V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hNq-SV-Zij"/>
+                <constraint firstItem="PZx-Lz-H4o" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mBF-6b-rKD"/>
+                <constraint firstAttribute="trailing" secondItem="CfD-aL-f4V" secondAttribute="trailing" id="q43-vi-z7S"/>
+                <constraint firstAttribute="trailing" secondItem="MoO-qT-vcd" secondAttribute="trailing" id="wyK-j4-Oeg"/>
+                <constraint firstItem="MoO-qT-vcd" firstAttribute="top" secondItem="PZx-Lz-H4o" secondAttribute="bottom" constant="15" id="zxJ-V3-pf7"/>
             </constraints>
-            <size key="customSize" width="138" height="163"/>
+            <size key="customSize" width="138" height="162"/>
             <connections>
                 <outlet property="categoryImageView" destination="PZx-Lz-H4o" id="83g-0r-d3M"/>
                 <outlet property="categoryNameLabel" destination="MoO-qT-vcd" id="2ez-Wh-Nqv"/>
                 <outlet property="categoryPositionsLabel" destination="CfD-aL-f4V" id="elg-qX-SKK"/>
             </connections>
-            <point key="canvasLocation" x="195.6521739130435" y="104.79910714285714"/>
+            <point key="canvasLocation" x="195.6521739130435" y="104.46428571428571"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -12,7 +12,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     private var logoImageView: UIImageView!
     private var phoneButton: UIButton!
     private var categoryCollectionView: CategoryCollectionView!
-    private var subCategoryCollectionView: UICollectionView!
+    private var subCategoryCollectionView: SubCategoryCollectionView!
     private var menuSushiList = [MenuList]()
     private var subMenuSushiList = [MenuList]()
     var sushiLabel: UILabel!
@@ -26,6 +26,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         setPhoneButton()
         setCategoryCollection()
         setSushiLabel()
+        setSubCategoryCollectionView()
     }
     
     override func viewDidLoad() {
@@ -62,6 +63,11 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         view.addSubview(sushiLabel)
     }
     
+    private func setSubCategoryCollectionView() {
+        subCategoryCollectionView = SubCategoryCollectionView()
+        view.addSubview(subCategoryCollectionView)
+    }
+    
     private func setElements() {
         NSLayoutConstraint.activate([
         
@@ -80,6 +86,10 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             sushiLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             sushiLabel.topAnchor.constraint(equalTo: categoryCollectionView.bottomAnchor, constant: 20),
             view.trailingAnchor.constraint(equalTo: sushiLabel.trailingAnchor, constant: 10),
+            subCategoryCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            view.trailingAnchor.constraint(equalTo: subCategoryCollectionView.trailingAnchor, constant: 10),
+            subCategoryCollectionView.topAnchor.constraint(equalTo: sushiLabel.bottomAnchor, constant: 10),
+            subCategoryCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
           
         ])
     }
