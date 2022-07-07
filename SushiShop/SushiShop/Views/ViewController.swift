@@ -14,6 +14,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     private var categoryCollectionView: CategoryCollectionView!
     private var subCategoryCollectionView: UICollectionView!
     private var menuSushiList = [MenuList]()
+    private var subMenuSushiList = [MenuList]()
     var sushiLabel: UILabel!
     
     override func loadView() {
@@ -57,7 +58,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func setSushiLabel() {
-        sushiLabel = UILabel.infoLabel(text: categoryCollectionView.selectedCategoryName)
+        sushiLabel = UILabel.infoLabel(text: categoryCollectionView?.selectedCategoryName ?? "")
         view.addSubview(sushiLabel)
     }
     
@@ -92,6 +93,21 @@ class ViewController: UIViewController, UICollectionViewDelegate {
                 self?.menuSushiList = allMenu.menuList
                 self?.categoryCollectionView.setItems(cells: self?.menuSushiList ?? nil)
                 self?.categoryCollectionView.reloadData()
+                self?.sushiLabel.text = self?.menuSushiList[0].name
+                self?.fetchSubMenu(menuID: (self?.menuSushiList[0].menuID)!)
+
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
+    
+    private func fetchSubMenu(menuID: String) {
+        NetworkManager().getSubCategorySushi(forBody: menuID) { [weak self] (result) in
+            switch result {
+            case .success(let subMenu):
+                self?.subMenuSushiList = subMenu.menuList
             case .failure(let error):
                 print(error.localizedDescription)
             }

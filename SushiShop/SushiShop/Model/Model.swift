@@ -8,11 +8,13 @@
 import Foundation
 
 struct Sushi: Codable {
-    let status: Bool
+    let status: Bool?
     let menuList: [MenuList]
 }
 
 struct MenuList: Codable {
-    let menuID, image, name: String
-    let subMenuCount: Int
+    let menuID, image, name: String?
+    let id, content, price: String?
+    let weight, spicy: String?
+    let subMenuCount: Int?
 }

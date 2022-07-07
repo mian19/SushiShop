@@ -10,7 +10,7 @@ import UIKit
 class CategoryCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var cells: [MenuList]?
-    var selectedCategoryName: String = "Сеты"
+    var selectedCategoryName: String?
     var selectedIndex: IndexPath = [0, 0]
     var myDeleg: ViewController!
     
