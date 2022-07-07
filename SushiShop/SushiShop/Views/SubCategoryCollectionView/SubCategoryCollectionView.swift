@@ -28,18 +28,23 @@ class SubCategoryCollectionView: UICollectionView, UICollectionViewDelegate, UIC
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setItems(cells: [MenuList]?) {
+        self.cells = cells
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        cells?.count ?? 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: "subCell", for: indexPath) as! SubCategoryCollectionViewCell
+        cell.updateUI(subCategoryItem: cells?[indexPath.row])
   
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let widthCell = self.bounds.width / 2 - 15
+        let widthCell = self.bounds.width / 2 - 10
         return CGSize(width: widthCell, height: widthCell * 1.33)
     }
     

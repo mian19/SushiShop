@@ -84,7 +84,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             categoryCollectionView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
             view.trailingAnchor.constraint(equalTo: categoryCollectionView.trailingAnchor, constant: 10),
             sushiLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            sushiLabel.topAnchor.constraint(equalTo: categoryCollectionView.bottomAnchor, constant: 20),
+            sushiLabel.topAnchor.constraint(equalTo: categoryCollectionView.bottomAnchor, constant: 10),
             view.trailingAnchor.constraint(equalTo: sushiLabel.trailingAnchor, constant: 10),
             subCategoryCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             view.trailingAnchor.constraint(equalTo: subCategoryCollectionView.trailingAnchor, constant: 10),
@@ -110,7 +110,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
                 print(error.localizedDescription)
             }
         }
-        
     }
     
     private func fetchSubMenu(menuID: String) {
@@ -118,6 +117,8 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             switch result {
             case .success(let subMenu):
                 self?.subMenuSushiList = subMenu.menuList
+                self?.subCategoryCollectionView.setItems(cells: self?.subMenuSushiList ?? nil)
+                self?.subCategoryCollectionView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
