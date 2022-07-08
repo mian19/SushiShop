@@ -8,5 +8,5 @@
 - CollectionView with vertical scrollDirection (Submenu)
 - Cells are made via XIB files
 
-## Bottom panel
+## Bottom panel:
 - UITabBarController
