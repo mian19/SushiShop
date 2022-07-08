@@ -59,7 +59,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func setSushiLabel() {
-        sushiLabel = UILabel.infoLabel(text: categoryCollectionView?.selectedCategoryName ?? "")
+        sushiLabel = UILabel.infoLabel(text: categoryCollectionView?.selectedCategoryName ?? "Раздел меню")
         view.addSubview(sushiLabel)
     }
     
